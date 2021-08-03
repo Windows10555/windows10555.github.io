@@ -30,22 +30,8 @@ background-attachment: fixed;"
 <span id="China_z43d" style="font-size:15px"></span>
 <script src="https://widget.time.is/zh.js"></script>
 <script>
-time_is_widget.init({China_z43d:{template:"TIME<br>DATE<br>SUN", time_format:"12hours:minutes:secondsAMPM", date_format:"year年monthnamednum日dayname，第week周", sun_format:"日出: srhour:srminute 日落: sshour:ssminute<br>昼长: dlhours时 dlminutes分", coords:"35.0000000,105.0000000"}});
+time_is_widget.init({China_z43d:{template:"TIME<br>DATE<br>SUN", time_format:"12hours:minutes:secondsAMPM", date_format:"year年monthnamednum日dayname，week周", sun_format:"日出: srhour:srminute 日落: sshour:ssminute<br>昼长: dlhours时 dlminutes分", coords:"35.0000000,105.0000000"}});
 </script>
 
-<span style="font-size:15px">
-<script>
-    function time() {
-        var date = new Date();
-        var hour = date.getHours();
-        var minutes = date.getMinutes();
-        var seconds = date.getSeconds();
-        var str = "System Time " + hour + " : " + minutes + " : " + seconds + " . ";
-        var div1 = document.getElementById("div1");
-        div1.innerHTML = str;
-    }
-    setInterval(time,1000);
-</script>
-</span>
 </body>
 </html>
