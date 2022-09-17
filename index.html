@@ -34,76 +34,12 @@ background-attachment: fixed;">
     <script src="https://amdradeonrin.github.io/Tianyi/js/darkmode.min.js"></script>
     <script src="https://amdradeonrin.github.io/Tianyi/js/materiality.min.js"></script>
     <script src="https://amdradeonrin.github.io/Tianyi/js/smoothscroll.min.js"></script>
-
+    <script type="text/javascript" src="./Non-VIPVid/jquery.min.js"></script>
     <div style="text-align:center">
-        <img src="https://ip.qnbk.icu/ip1" alt="ip1.jpg" border="0" />
-
+        
         <img src="https://apis.jxcxin.cn/api/ip">
     </div>
-    <script>
-        function uaredirect(f) {
-            try {
-                if (document.getElementById("bdmark") != null) {
-                    return
-                }
-                var b = false;
-                if (arguments[1]) {
-                    var e = window.location.host;
-                    var a = window.location.href;
-                    if (isSubdomin(arguments[1], e) == 1) {
-                        f = f + "/#m/" + a;
-                        b = true
-                    } else {
-                        if (isSubdomin(arguments[1], e) == 2) {
-                            f = f + "/#m/" + a;
-                            b = false
-                        }
-                    }
-                } else {
-                    b = true
-                }
-                if (b) {
-                    var c = window.location.hash;
-                    if ((navigator.userAgent.match(/iphone|iPod|Android|ios)/i))) {
-                        location.replace(f)
-                    }
-                }
-            } catch (d) { }
-        }
-        function isSubdomin(c, d) {
-            this.getdomin = function (f) {
-                var e = f.indexOf("://");
-                if (e > 0) {
-                    var h = f.substr(e + 3)
-                } else {
-                    var h = f
-                }
-                var g = /^www\./;
-                if (g.test(h)) {
-                    h = h.substr(4)
-                }
-                return h
-            };
-            if (c == d) {
-                return 1
-            } else {
-                var c = this.getdomin(c);
-                var b = this.getdomin(d);
-                if (c == b) {
-                    return 1
-                } else {
-                    c = c.replace(".", "\\.");
-                    var a = new RegExp("\\." + c + "$")
-                    if (b.match(a)) {
-                        return 2
-                    } else {
-                        return 0
-                    }
-                }
-            }
-        };
-        uaredirect("https://windows10555.github.io/DDos-WG/Mobile")
-    </script>
+
 
         <div class="page-content">
             <div class="translate-box"></div>
@@ -146,7 +82,22 @@ background-attachment: fixed;">
                                 <script>apistore()</script>
                             </div>
                             <div style="text-align:center">
-                                <a href="https://icp.gov.moe/?keyword=20221055" target="_black">萌ICP备20221055号</a>
+                                <script>
+                                    $(function(){
+                                    $("#btn").click(function(){
+                                    $.getJSON("https://apis.jxcxin.cn/api/qqstate?qq=2035935505",function(data){
+                                    var $jsontip = $("#jsonTip");
+                                    var strHtml = "123";//存储数据的变量
+                                    $jsontip.empty();//清空内容
+                                    $.each(data,function(infoIndex,info){
+                                    strHtml += "Windows10555 QQ状态："+info["msg"]+"<br />";
+                                    strHtml += "<hr>"
+                                    })
+                                    $jsontip.html(strHtml);//显示处理后的数据
+                                    })
+                                    })
+                               </script>
+                                ■<a href="https://icp.gov.moe/?keyword=20221055" target="_black">萌ICP备20221055号</a>
                             </div>
 
 </body>
