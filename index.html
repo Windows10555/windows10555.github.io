@@ -83,19 +83,22 @@ background-attachment: fixed;">
                             </div>
                             <div style="text-align:center">
                                 <script>
-                                    $(function(){
-                                    $("#btn").click(function(){
                                     $.getJSON("https://apis.jxcxin.cn/api/qqstate?qq=2035935505",function(data){
-                                    var $jsontip = $("#jsonTip");
-                                    var strHtml = "123";//存储数据的变量
-                                    $jsontip.empty();//清空内容
-                                    $.each(data,function(infoIndex,info){
-                                    strHtml += "Windows10555 QQ状态："+info["msg"]+"<br />";
-                                    strHtml += "<hr>"
-                                    })
-                                    $jsontip.html(strHtml);//显示处理后的数据
-                                    })
-                                    })
+                                    var tr;
+
+for (var i = 0; i < data.length; i++) {
+
+tr = $('
+
+');
+tr.append("
+
+" + data[i].msg + "");
+$('table').append(tr);
+
+}
+
+});
                                </script>
                                 ■<a href="https://icp.gov.moe/?keyword=20221055" target="_black">萌ICP备20221055号</a>
                             </div>
