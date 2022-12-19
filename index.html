@@ -19,7 +19,7 @@
       href="css/mdui.min.css"
     />-->
     <Link Rel="SHORTCUT ICON" href="./favicon.ico">
-    <meta name="keywords" content="Windows10555,Windows10555 Team,DDos-WG,DDos WorkGroup,Windows10555团队,wzhjq2ds"
+    <meta name="keywords" content="Windows10555,Windows10555 Team,DDos-WG,DDos WorkGroup,Windows10555团队,wzhjq2ds">
 </head>
 <body background="./pic/Background.jpg"
       style=" background-repeat:no-repeat ;
@@ -48,7 +48,7 @@ background-attachment: fixed;">
                 <i class="mdui-icon material-icons">&#xe63a;</i>
                 <label>VIP视频解析</label>
             </a>
-            <a href="#warn" class="mdui-ripple" disabled>
+            <a href="" class="mdui-ripple" disabled>
                 <i class="mdui-icon material-icons">&#xe002;</i>
                 <label>开发中</label>
             </a>
@@ -71,7 +71,7 @@ background-attachment: fixed;">
                             <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-dialog="{target: '#users'}">团队人员</button>
                             <div class="mdui-dialog" id="users">
                             <div class="mdui-dialog-title">团队人员</div>
-                            <div class="mdui-dialog-content">Windows10555（我 负责全局）<br />沈申（<a href="https://wzhjq2ds.github.io/" target="_blank">wzhjq2ds</a>，资源支持，分享）<br />杨嘉豪（YangSuF[我起的]，酱油区）<br />同时感谢你的支持。</div>
+                            <div class="mdui-dialog-content">Windows10555（我 负责全局）<br />沈申（<a href="https://www.wzhjq2ds.cf/" target="_blank">wzhjq2ds</a>，资源支持，分享）<br />杨嘉豪（YangSuF[我起的]，酱油区）<br />同时感谢你的支持。</div>
                             <div class="mdui-dialog-actions">
                             <button class="mdui-btn mdui-ripple" mdui-dialog-close>OK</button>
                             </div>
@@ -81,7 +81,7 @@ background-attachment: fixed;">
                         <br />
                         目前我们和下列团队长期合作：<a href="http://icee.gq" target="_black">IceTeam</a>
                         <br />
-                        <a href="./other/thanks.html" target="_black">这是一个感谢链接</a>
+                        <a href="./other/thanks.html">这是一个感谢链接</a>
 			<a href="https://www.is-so-nb.gq" target="_blank">免费的二级域名~</a>
                             
                             </div>
@@ -125,26 +125,31 @@ $('table').append(tr);
 		    <div class="container-fluid video-box">
 			<div class="container ">
 				<div class="url-box" style="margin-top: 10px;">
-					<div class="input-group">
-						<input type="text" id="url" onfocus="this.select()" class="form-control url-text" aria-label="Text input with segmented button dropdown" placeholder="请复制你想要看的视频网址，粘贴到此处点击播放即可！" title="请复制你想要看的视频网址，粘贴到此处点击播放即可！">
+					<div class="mdui-textfield">
+            <i class="mdui-icon material-icons">&#xe250;</i>
+            <input class="mdui-textfield-input" type="text" id="url" placeholder="链接"/>
+            <div class="mdui-textfield-helper">把你从视频平台看的链接粘贴到这就行，最好是电脑版粘贴的链接</div>
+						<!--<input type="text" id="url" onfocus="this.select()" class="form-control url-text" aria-label="Text input with segmented button dropdown" placeholder="链接">-->
+					</div>
+						
 						<div class="input-group-addon">
-							<select class="url-c url-text" title="无法正常播放请尝试更换视频线路" id="jk">
-								<option value="https://jx.bozrc.com:4433/player/?url=" selected>标清默认 稳定</option>
-								<option value="https://okjx.cc/?url=">多线 兼容</option>
+							<select class="mdui-select" mdui-select title="无法正常播放请尝试更换视频线路" id="jk">
+
+								<option value="https://okjx.cc/?url=" selected="">多线 兼容</option>
 								<option value="https://jx.m3u8.tv/jiexi/?url=">旧线 稍慢 兼容</option>
-								<option value="https://parse.mw0.cc/?url=" selected="">通用1</option>
-								<option value="https://jx.iztyy.com/svip/?url=" selected="">通用2</option>
-								<option value="https://jx.xmflv.com/?url=" selected="">通用3</option>
-								<option value="https://www.8090.la/8090/?url=" selected="">蓝光</option>
-								<option value="https://jx.4kdv.com/?url=" selected="">蓝光 NoBili</option>
-								<option value="https://www.administratorw.com/index.php?url=" selected="">高清1 NoBili</option>
-								<option value="https://jx.ppflv.com/?url=" selected="">高清2</option>
-								<option value="https://jx.bozrc.com:4433/player/?url=" selected="">高清3</option>
-								<option value="https://www.yemu.xyz/v/c.php?url=" selected="">高清4</option>
+								<option value="https://jx.bozrc.com:4433/player/?url=" disable>标清</option>								<option value="https://parse.mw0.cc/?url=">通用1</option>
+								<option value="https://jx.iztyy.com/svip/?url=">通用2</option>
+								<option value="https://jx.xmflv.com/?url=">通用3</option>
+								<option value="https://www.8090.la/8090/?url=">蓝光</option>
+								<option value="https://jx.4kdv.com/?url=">蓝光 NoBili</option>
+								<option value="https://www.administratorw.com/index.php?url=">高清1 NoBili</option>
+								<option value="https://jx.ppflv.com/?url=">高清2</option>
+								<option value="https://jx.bozrc.com:4433/player/?url=" disabled>高清3</option>
+								<option value="https://www.yemu.xyz/v/c.php?url=" disabled>高清4</option>
 							</select>
 						</div>
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-default btn-play" title="点击解析并开始播放" onclick="play()">解析播放</button>
+							<button type="button" class="mdui-btn mdui-btn-block mdui-color-green mdui-ripple mdui-btn-raised" title="点击解析并开始播放" onclick="play()">解析播放</button>
 						</div>
 					</div>
 				</div>
@@ -152,10 +157,9 @@ $('table').append(tr);
 				</div>
 				<div class="bofang">
 					<div class="bofangqi">
-				<iframe id="palybox" style="height: 100%;" src="https://okjx.cc/" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen="true" allowtransparency="false"></iframe>
-
+				<iframe id="palybox" style="height: 480px;width: 800px" src="about:blank" allowtransparency="true" frameborder="0" scrolling="yes" allowfullscreen="true" allowtransparency="false" ></iframe>
+            </div></div>
             </div>
-            <div id=" " class="mdui-p-a-2">
                 
 
 </body>
