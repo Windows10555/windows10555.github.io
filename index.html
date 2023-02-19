@@ -24,9 +24,7 @@
     <meta name="keywords" content="Windows10555,Windows10555 Team,DDos-WG,DDos WorkGroup,Windows10555团队,wzhjq2ds,YangSuF">
 </head>
 <body background="./pic/Background.jpg"
-      style=" background-repeat:no-repeat ;
-background-size:100% 100%;
-background-attachment: fixed;">
+      style="background-repeat:no-repeat;background-size:100% 100%;background-attachment: fixed;user-select: none;.mdui-theme-layout-auto;" class="mdui-theme-primary-teal mdui-theme-accent-teal">
     <!--<div style="text-align:center">
         <img src="https://apis.jxcxin.cn/api/ip">
     </div>
@@ -45,7 +43,7 @@ background-attachment: fixed;">
             <label>开发中</label>
         </a>
     </div>
-    <div id="#main" class="mdui-p-a-2" style="user-select: none;">
+    <div id="#main" class="mdui-p-a-2">
     <div class="page-content">
         <div class="translate-box"></div>
             <div class="mdui-container" id="main">
@@ -55,18 +53,27 @@ background-attachment: fixed;">
                 <!--文章预览卡片-->
                 <div class="mdui-card mdui-hoverable mdui-m-y-3">
                     <div class="mdui-card-primary">
-                        <div class="mdui-card-primary-title"><a class="mdui-text-color-theme-accent">Windows10555 Team</a></div>
+                        <div class="mdui-card-primary-title"><a class="">Windows10555 Team</a></div>
                         <div class="mdui-card-primary-subtitle mdui-text-color-theme-text">一个及其小众的团队                          <a href="https://stats.uptimerobot.com/07oQlikxW8" style="color:black;text-decoration:none;">服务器状态</a></div>
                             这是一个团队，我是Windows10555，团队的头儿。<br />
                             我们一般都比较忙，比如邮箱什么的要不看就是很久，请见谅。<br />
-                            <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-dialog="{target: '#users'}">团队人员</button>
-                            <div class="mdui-dialog" id="users">
+                            <button class="mdui-btn mdui-ripple" mdui-dialog="{target: '#team_users'}">团队人员</button><button class="mdui-btn mdui-ripple" mdui-dialog="{target: '#team_call'}">联系我们</button>
+                            <!--弹出框内容开始-->
+                            <div class="mdui-dialog" id="team_users">
                             <div class="mdui-dialog-title">团队人员</div>
                             <div class="mdui-dialog-content">Windows10555（我 负责全局 女）<br />沈申（<a href="https://www.wzhjq2ds.cf/" target="_blank">wzhjq2ds</a>，资源支持，分享 男）<br />杨嘉豪（YangSuF[我起的]，酱油区 男）<br />同时感谢你的支持。</div>
                             <div class="mdui-dialog-actions">
                             <button class="mdui-btn mdui-ripple" mdui-dialog-close>OK</button>
                             </div>
                         </div>
+                        <div class="mdui-dialog" id="team_call">
+                            <div class="mdui-dialog-title">联系方式</div>
+                            <div class="mdui-dialog-content">你可以用以下方式联系我提出点建议：<br /><a href="mailto:Windows10555@163.com" target="_self">我的163邮箱</a>（主要，查看时间随机）<br /><a href="mailto:DDos-WG@outlook.com" target="_self">我的Outlook邮箱</a>（次要，多设备协同，几乎一天看一眼）<br /><a href="https://xq.kzw.ink?xq102210" target="_blank">XChat</a>（最常存在的地方）</div>
+                            <div class="mdui-dialog-actions">
+                            <button class="mdui-btn mdui-ripple" mdui-dialog-close>OK</button>
+                            </div>
+                        </div>
+                        <!--弹出框内容结束-->
                         <br />
                         团队别名：DDos-WG（已弃用），Win105T
                         <br />
@@ -85,13 +92,11 @@ background-attachment: fixed;">
                 </div>
             </div>
             <div style="text-align:center">
-                <script>apistore()</script>
-            </div>
-            <div style="text-align:center">
+                <script>apistore()</script><br />
                  <a href="https://icp.gov.moe/?keyword=20221055" target="_black">萌ICP备20221055号</a>
             </div>
             </div>
-            <div id="vid" class="mdui-p-a-2" style="user-select: none;">
+            <div id="vid" class="mdui-p-a-2">
                 <div class="container-fluid video-box">
                     <div class="container ">
                         <div class="url-box" style="margin-top: 10px;">
@@ -116,7 +121,7 @@ background-attachment: fixed;">
                                 </select>
                             </div>
                             <div class="input-group-btn">
-                                <button type="button" class="mdui-btn mdui-btn-block mdui-color-green mdui-ripple mdui-btn-raised" title="点击解析并开始播放" onclick="play()">解析播放</button>
+                                <button type="button" class="mdui-btn mdui-btn-block mdui-color-theme-accent mdui-ripple mdui-btn-raised" title="点击解析并开始播放" onclick="play()">解析播放</button>
                             </div>
                         </div>
                     </div>
@@ -124,7 +129,7 @@ background-attachment: fixed;">
                     </div>
                     <div class="bofang">
                         <div class="bofangqi">
-                            <iframe id="palybox" src="about:blank" allowtransparency="true" frameborder="0" allowfullscreen="true"  height="480px" width="100%" id="frame_full" frameborder="0" scrolling="auto"  onload="this.style.height=document.body.clientHeight-50"></iframe>
+                            <iframe id="palybox" src="about:blank" allowtransparency="true" frameborder="0" allowfullscreen="true"  height="400px" width="100%" id="frame_full" frameborder="0" scrolling="auto"  onload="this.style.height=document.body.clientHeight-50"></iframe>
                         </div>
                   </div>
               </div>
