@@ -16,7 +16,7 @@ function play() {
 
 
 
-		alert("请输入视频链接，没有视频链接无法解析")
+		alert("哥们链接呢")
 
 
 
@@ -24,11 +24,11 @@ function play() {
 
 
 
-		var jxApi = document.getElementById("jk"); //获取选择按钮
+		var jxApi = document.getElementById("Load_Links"); //获取选择按钮
 
 
 
-		var jxurl = document.getElementById("jk").selectedIndex; //获取选中的
+		var jxurl = document.getElementById("Load_Links").selectedIndex; //获取选中的
 
 
 
@@ -36,7 +36,7 @@ function play() {
 
 
 
-		var paly = document.getElementById("palybox"); //获取播放窗口位置
+		var paly = document.getElementById("Play"); //获取播放窗口位置
 
 
 
