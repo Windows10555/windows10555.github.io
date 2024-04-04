@@ -1,4 +1,4 @@
-function calculateTimeElapsed(since) {
+function updateTimer() {
   const months = [31, (isLeapYear(since.getFullYear())) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   let yearsDiff = currentDate.getFullYear() - since.getFullYear();
   let monthsDiff = currentDate.getMonth() - since.getMonth() + (yearsDiff * 12);
@@ -41,7 +41,7 @@ function isLeapYear(year) {
 }
 
 function updateTimer() {
-  const sinceDate = new Date(2019, 6, 2); // 2019年4月2日
+  const sinceDate = new Date(2019, 3, 2); // 2019年4月2日
   const currentDate = new Date();
   const timeElapsed = calculateTimeElapsed(sinceDate);
 
