@@ -1,39 +1,34 @@
-// 定义更新时间的函数
-function updateTime() {
-  // 引入Date对象和相关的时间常量
-  const startDate = new Date('2019-07-02T00:00:00');
-  let currentDate = new Date(); // 当前日期会实时更新
-  const oneSecond = 1000;
-  const oneMinute = oneSecond * 60;
-  const oneHour = oneMinute * 60;
-  const oneDay = oneHour * 24;
-  const oneYear = oneDay * 365.25; // 考虑闰年
+// 直接在脚本中嵌入moment.js库
+function includeMomentJS() {
+    var momentScript = document.createElement('script');
+    momentScript.type = 'text/javascript';
+    momentScript.src = 'https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js';
+    document.head.appendChild(momentScript);
+}
+// 创建一个函数来计算时间差并更新显示
+function updateTimestamp() {
+    // 确保moment.js和中文locale已经加载
+    if (typeof moment === 'undefined' ) {
+        includeMomentJS();
+        setTimeout(updateTimestamp, 1000); // 如果moment.js未加载，等待1秒后再次尝试
+        return;
+    }
 
-  // 计算两个日期之间的总毫秒数
-  const totalMilliseconds = currentDate - startDate;
+    // 设置moment.js为中文locale
+    moment.locale('zh-cn');
 
-  // 将总毫秒数转换为年月日时分秒
-  let totalSeconds = totalMilliseconds / oneSecond;
-  let totalMinutes = totalSeconds / oneMinute;
-  let totalHours = totalMinutes / oneHour;
-  let totalDays = totalHours / oneDay;
-  let totalYears = totalDays / 365.25;
+    // 设置起始日期
+    var startDate = moment("2019-07-02");
+    // 获取当前日期
+    var currentDate = moment();
+    // 计算两个日期之间的差异
+    var difference = currentDate.diff(startDate, true);
+    var duration = moment.duration(difference);
 
-  // 计算剩余的天数，小时数，分钟数和秒数
-  let remainingDays = totalDays % 365.25;
-  let remainingHours = remainingDays * 24 % 24;
-  let remainingMinutes = remainingHours * 60 % 60;
-  let remainingSeconds = remainingMinutes * 60 % 60;
-
-  // 格式化输出结果
-  let result = `${Math.floor(totalYears)}年${Math.floor(remainingDays)}天${remainingHours}时${remainingMinutes}分${remainingSeconds}秒`;
-
-  // 将结果输出到页面上ID为htmer_time的元素中
-  document.getElementById('htmer_time').innerText = result;
+    // 更新显示
+    document.getElementById('htmer_time').innerHTML = `${duration.years()}年${duration.months()}月${duration.days()}天${duration.hours()}${duration.minutes()}分${duration.seconds()}秒`;
 }
 
-// 设置定时器，每秒调用一次updateTime函数
-setInterval(updateTime, 1000);
-
-// 初始调用一次updateTime函数以显示启动时的时间差
-updateTime();
+// 立即执行一次updateTimestamp函数，然后每隔一秒调用一次
+updateTimestamp();
+setInterval(updateTimestamp, 1000);
