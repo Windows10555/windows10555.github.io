@@ -1,58 +1,39 @@
-function updateTimer() {
-  const months = [31, (isLeapYear(since.getFullYear())) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-  let yearsDiff = currentDate.getFullYear() - since.getFullYear();
-  let monthsDiff = currentDate.getMonth() - since.getMonth() + (yearsDiff * 12);
-  let daysDiff = currentDate.getDate() - since.getDate() + (monthsDiff * months[since.getMonth()]);
-  let hoursDiff = currentDate.getHours() - since.getHours();
-  let minutesDiff = currentDate.getMinutes() - since.getMinutes();
-  let secondsDiff = currentDate.getSeconds() - since.getSeconds();
+// 定义更新时间的函数
+function updateTime() {
+  // 引入Date对象和相关的时间常量
+  const startDate = new Date('2019-07-02T00:00:00');
+  let currentDate = new Date(); // 当前日期会实时更新
+  const oneSecond = 1000;
+  const oneMinute = oneSecond * 60;
+  const oneHour = oneMinute * 60;
+  const oneDay = oneHour * 24;
+  const oneYear = oneDay * 365.25; // 考虑闰年
 
-  // 修正天数差异，确保不超过月份的天数
-  while (daysDiff < 0 || daysDiff > months[since.getMonth()]) {
-    monthsDiff += (daysDiff > months[since.getMonth()]) ? -1 : 1;
-    daysDiff += months[monthsDiff] + (monthsDiff > 0 ? -1 : 1);
-  }
+  // 计算两个日期之间的总毫秒数
+  const totalMilliseconds = currentDate - startDate;
 
-  // 修正小时、分钟、秒的差异
-  while (hoursDiff < 0) {
-    hoursDiff += 24;
-    minutesDiff--;
-  }
-  while (minutesDiff < 0) {
-    minutesDiff += 60;
-    secondsDiff--;
-  }
-  while (secondsDiff < 0) {
-    secondsDiff += 60;
-  }
+  // 将总毫秒数转换为年月日时分秒
+  let totalSeconds = totalMilliseconds / oneSecond;
+  let totalMinutes = totalSeconds / oneMinute;
+  let totalHours = totalMinutes / oneHour;
+  let totalDays = totalHours / oneDay;
+  let totalYears = totalDays / 365.25;
 
-  return {
-    years: yearsDiff,
-    months: monthsDiff,
-    days: daysDiff,
-    hours: hoursDiff,
-    minutes: minutesDiff,
-    seconds: secondsDiff
-  };
+  // 计算剩余的天数，小时数，分钟数和秒数
+  let remainingDays = totalDays % 365.25;
+  let remainingHours = remainingDays * 24 % 24;
+  let remainingMinutes = remainingHours * 60 % 60;
+  let remainingSeconds = remainingMinutes * 60 % 60;
+
+  // 格式化输出结果
+  let result = `${Math.floor(totalYears)}年${Math.floor(remainingDays)}天${remainingHours}时${remainingMinutes}分${remainingSeconds}秒`;
+
+  // 将结果输出到页面上ID为htmer_time的元素中
+  document.getElementById('htmer_time').innerText = result;
 }
 
-function isLeapYear(year) {
-  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
-}
+// 设置定时器，每秒调用一次updateTime函数
+setInterval(updateTime, 1000);
 
-function updateTimer() {
-  const sinceDate = new Date(2019, 3, 2); // 2019年4月2日
-  const currentDate = new Date();
-  const timeElapsed = calculateTimeElapsed(sinceDate);
-
-  // 构建显示的字符串
-  let display = `${timeElapsed.years}年 ${timeElapsed.months}月 ${timeElapsed.days}天 ${timeElapsed.hours}时 ${timeElapsed.minutes}分 ${timeElapsed.seconds}秒`;
-  document.getElementById('timer').innerText = display;
-  document.getElementById('htmer_time').innerText = display;
-  
-  // 每秒更新时间
-  setInterval(updateTimer, 1000);
-}
-
-// 当页面加载完毕时，调用updateTimer函数
-window.onload = updateTimer;
+// 初始调用一次updateTime函数以显示启动时的时间差
+updateTime();
