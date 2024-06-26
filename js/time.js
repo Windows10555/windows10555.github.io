@@ -2,7 +2,7 @@
 function includeMomentJS() {
     var momentScript = document.createElement('script');
     momentScript.type = 'text/javascript';
-    momentScript.src = 'https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js';
+    momentScript.src = 'http://momentjs.cn/downloads/moment-with-locales.js';
     document.head.appendChild(momentScript);
 }
 // 创建一个函数来计算时间差并更新显示
@@ -10,7 +10,7 @@ function updateTimestamp() {
     // 确保moment.js和中文locale已经加载
     if (typeof moment === 'undefined' ) {
         includeMomentJS();
-        setTimeout(updateTimestamp, 1000); // 如果moment.js未加载，等待1秒后再次尝试
+        setTimeout(updateTimestamp, 3000);
         return;
     }
 
