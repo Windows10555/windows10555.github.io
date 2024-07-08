@@ -1,19 +1,4 @@
-// 直接在脚本中嵌入moment.js库
-function includeMomentJS() {
-    var momentScript = document.createElement('script');
-    momentScript.type = 'text/javascript';
-    momentScript.src = 'http://momentjs.cn/downloads/moment-with-locales.js';
-    document.head.appendChild(momentScript);
-}
-// 创建一个函数来计算时间差并更新显示
 function updateTimestamp() {
-    // 确保moment.js和中文locale已经加载
-    if (typeof moment === 'undefined' ) {
-        includeMomentJS();
-        setTimeout(updateTimestamp, 3000);
-        return;
-    }
-
     // 设置moment.js为中文locale
     moment.locale('zh-cn');
 
