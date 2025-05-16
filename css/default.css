@@ -1,49 +1,86 @@
 .img-responsive {
-  max-width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
+
 .shield-container {
-  display: flex;
-  flex-wrap: wrap; /* 允许换行 */
-  justify-content: center; /* 水平居中对齐 */
-  align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    /* 允许换行 */
+    justify-content: center;
+    /* 水平居中对齐 */
+    align-items: center;
 }
+
 .shield-container img {
-  margin: 5px; /* 适当调整图片间的间隔 */
-  max-width: 100%; /* 图片宽度不超过容器宽度 */
-  height: auto; /* 保持图片宽高比 */
-}.mdui-dialog-content p {
-    margin: 10px 0;          /* 段落的上下方间隔 */
+    margin: 5px;
+    /* 适当调整图片间的间隔 */
+    max-width: 100%;
+    /* 图片宽度不超过容器宽度 */
+    height: auto;
+    /* 保持图片宽高比 */
 }
+
+.mdui-dialog-content p {
+    margin: 10px 0;
+    /* 段落的上下方间隔 */
+}
+
 .neon-text {
-  /* font-size: 24px; /* 根据需要调整字体大小 */
-  color: #fff; /* 文字颜色 */
-  animation: neonGradient 3s ease-in-out infinite alternate;
+    /* font-size: 24px; /* 根据需要调整字体大小 */
+    color: #fff;
+    /* 文字颜色 */
+    animation: neonGradient 3s ease-in-out infinite alternate;
 }
 
 @keyframes neonGradient {
-  0% {
-    text-shadow: 
-      0 0 5px #ff0000, /* 红色 */
-      0 0 10px #ff4000, /* 橙色 */
-      0 0 15px #ff8000, /* 黄色 */
-      0 0 20px #ffbf00, /* 绿色 */
-      0 0 25px #40ff00, /* 青色 */
-      0 0 30px #00ff40, /* 蓝色 */
-      0 0 35px #0040ff, /* 靛色 */
-      0 0 40px #8000ff, /* 紫色 */
-      0 0 45px #ff00ff; /* 粉色 */
-  }
-  100% {
-    text-shadow: 
-      0 0 5px #8000ff, /* 紫色 */
-      0 0 10px #4000ff, /* 粉色 */
-      0 0 15px #0000ff, /* 蓝色 */
-      0 0 20px #00ffbf, /* 青色 */
-      0 0 25px #00ff40, /* 绿色 */
-      0 0 30px #40ff00, /* 黄色 */
-      0 0 35px #ffbf00, /* 橙色 */
-      0 0 40px #ff8000, /* 红色 */
-      0 0 45px #ff4000; /* 橙色 */
-  }
+    0% {
+        text-shadow:
+            0 0 5px #ff0000,
+            /* 红色 */
+            0 0 10px #ff4000,
+            /* 橙色 */
+            0 0 15px #ff8000,
+            /* 黄色 */
+            0 0 20px #ffbf00,
+            /* 绿色 */
+            0 0 25px #40ff00,
+            /* 青色 */
+            0 0 30px #00ff40,
+            /* 蓝色 */
+            0 0 35px #0040ff,
+            /* 靛色 */
+            0 0 40px #8000ff,
+            /* 紫色 */
+            0 0 45px #ff00ff;
+        /* 粉色 */
+    }
+
+    100% {
+        text-shadow:
+            0 0 5px #8000ff,
+            /* 紫色 */
+            0 0 10px #4000ff,
+            /* 粉色 */
+            0 0 15px #0000ff,
+            /* 蓝色 */
+            0 0 20px #00ffbf,
+            /* 青色 */
+            0 0 25px #00ff40,
+            /* 绿色 */
+            0 0 30px #40ff00,
+            /* 黄色 */
+            0 0 35px #ffbf00,
+            /* 橙色 */
+            0 0 40px #ff8000,
+            /* 红色 */
+            0 0 45px #ff4000;
+        /* 橙色 */
+    }
+}
+
+* {
+    font-family: 'Moon Stars Kai';
+    font-weight: 400;
 }
